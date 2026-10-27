@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMORY TOYS | Collector's Corner - Mô hình & Đồ chơi</title>
+    <meta name="description" content="Chuyên cung cấp mô hình súng, đồ chơi vũ khí cận chiến cosplay, súng đạn xốp an toàn. Không bán vũ khí thật.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "ARMORY TOYS",
+      "description": "Cửa hàng mô hình, đồ chơi vũ khí cosplay và giải trí."
+    }
+    </script>
+</head>
+<body class="dark-mode">
+
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="logo-font">ARMORY TOYS</h1>
+            <p>Đang khởi động cửa hàng...</p>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Warning Modal -->
+    <div id="warning-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-title">LƯU Ý QUAN TRỌNG!</h2>
+            <ul class="modal-text">
+                <li>Đây là sản phẩm mô hình/đồ chơi trưng bày, <strong>hoàn toàn không có tính sát thương</strong>.</li>
+                <li>Chúng tôi <strong>KHÔNG</strong> bán vũ khí thật, không bán sản phẩm bị pháp luật cấm.</li>
+                <li>Người mua tự chịu trách nhiệm tuân thủ quy định pháp luật hiện hành tại địa phương.</li>
+            </ul>
+            <button id="btn-accept-warning" class="btn btn-primary">TÔI ĐÃ HIỂU – BẮT ĐẦU</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo logo-font">ARMORY TOYS</a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Trang chủ</a>
+                <a href="#shop" class="nav-link">Sản phẩm</a>
+                <a href="#shop" class="nav-link">Giá tốt</a>
+                <a href="#community" class="nav-link">Cộng đồng</a>
+                <a href="#footer" class="nav-link">Liên hệ</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm...">
+                    <button aria-label="Tìm kiếm">🔍</button>
+                </div>
+                <button id="theme-toggle" aria-label="Đổi giao diện" class="icon-btn">🌓</button>
+                <a href="cart.html" class="cart-icon icon-btn" aria-label="Giỏ hàng">
+                    🛒<span class="cart-badge" id="cart-badge">0</span>
+                </a>
+                <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section id="home" class="hero">
+            <div class="hero-slider" id="hero-slider">
+                <!-- Slides will be injected by JS -->
+            </div>
+            <button class="slider-btn prev-btn" id="slider-prev">❮</button>
+            <button class="slider-btn next-btn" id="slider-next">❯</button>
+            <div class="slider-dots" id="slider-dots"></div>
+        </section>
+
+        <!-- Feature Strip -->
+        <section class="features-strip">
+            <div class="container features-inner">
+                <div class="feature-item">Giao nhanh toàn quốc</div>
+                <div class="feature-item">Có video thật sản phẩm</div>
+                <div class="feature-item">Bảo hành uy tín</div>
+                <div class="feature-item">Hỗ trợ 24/7</div>
+            </div>
+        </section>
+
+        <!-- Shop Section (Danh sách sản phẩm) -->
+        <section id="shop" class="shop-section section-padding container">
+            <div class="section-header">
+                <h2 class="title-font">DANH MỤC CÁC SẢN PHẨM</h2>
+            </div>
+            
+            <div class="shop-controls">
+                <!-- Tabs danh mục -->
+                <div class="category-tabs" id="category-tabs">
+                    <button class="tab-btn active" data-category="all">Tất cả</button>
+                    <button class="tab-btn" data-category="gun">Súng đồ chơi</button>
+                    <button class="tab-btn" data-category="melee">Vũ khí cận chiến</button>
+                    <button class="tab-btn" data-category="accessory">Phụ kiện</button>
+                </div>
+                
+                <!-- Sort -->
+                <select id="sort-select" class="sort-select">
+                    <option value="newest">Mới nhất</option>
+                    <option value="price-asc">Giá: Thấp đến Cao</option>
+                    <option value="price-desc">Giá: Cao đến Thấp</option>
+                    <option value="name-asc">Tên: A-Z</option>
+                </select>
+            </div>
+
+            <!-- Lọc theo giá -->
+            <div class="price-filters" id="price-filters">
+                <span class="filter-label">Tìm nhanh theo giá:</span>
+                <button class="price-chip active" data-price="all">Tất cả</button>
+                <button class="price-chip" data-price="under-500">Dưới 500K</button>
+                <button class="price-chip" data-price="500-1000">500K - 1TR</button>
+                <button class="price-chip" data-price="1000-2000">1TR - 2TR</button>
+                <button class="price-chip" data-price="over-2000">Trên 2TR</button>
+            </div>
+
+            <!-- Horizontal product categories -->
+            <div class="product-grid" id="product-grid">
+                <!-- Skeletons / Products injected by JS -->
+            </div>
+            
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community-section section-padding">
+            <div class="container text-center">
+                <h2 class="title-font">THAM GIA CỘNG ĐỒNG</h2>
+                <p>Giao lưu, chia sẻ kinh nghiệm và nhận thông báo hàng mới sớm nhất.</p>
+                <div class="community-links">
+                    <a href="https://zalo.me/g/yourgroup" target="_blank" class="btn btn-primary">Zalo Group (2.5K+ TV)</a>
+                    <a href="https://facebook.com/groups/yourgroup" target="_blank" class="btn btn-outline">Facebook Group</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 class="logo-font">ARMORY TOYS</h3>
+                <p class="footer-note">Chỉ là sản phẩm mô hình trưng bày – không có tính sát thương.</p>
+                <p>Góc nhỏ dành cho người đam mê sưu tầm và cosplay.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên Hệ</h4>
+                <p> Địa chỉ: 63/23 Đường Số 10, Thủ Đức, TP.HCM</p>
+                <p> SĐT/Zalo: 0768768768</p>
+                <p> Email: huynhnhathao67@gmail.com</p>
+                <p> Giờ phục vụ: 9:00 - 21:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Chính Sách</h4>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Bảo mật thông tin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ARMORY TOYS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <a href="https://zalo.me/0909123456" target="_blank" class="fab zalo-fab" aria-label="Chat Zalo">💬</a>
+        <button id="back-to-top" class="fab btt-fab" aria-label="Lên đầu trang">⬆</button>
+    </div>
+
+    <!-- JS -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
